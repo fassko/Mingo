@@ -1,0 +1,48 @@
+@font-face {
+	font-family: 'mingo';
+	src:url('../font/mingo.eot?-pcvvge');
+	src:url('../font/mingo.eot?#iefix-pcvvge') format('embedded-opentype'),
+		url('../font/mingo.woff?-pcvvge') format('woff'),
+		url('../font/mingo.ttf?-pcvvge') format('truetype'),
+		url('../font/mingo.svg?-pcvvge#mingo') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'mingo';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+	content: "\e600";
+}
+.icon-facebook:before {
+	content: "\e609";
+}
+.icon-pile:before {
+	content: "\e601";
+    margin-left:-2.5%;
+    margin-right:2.5%;
+    font-size:25px;
+    line-height:50px;
+}
+.icon-grid:before {
+	content: "\e602";
+    margin-left:-2.5%;
+    margin-right:2.5%;
+    font-size:25px;
+    line-height:50px;
+}
+.icon-remove:before {
+	content: "\e603";
+}

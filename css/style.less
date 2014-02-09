@@ -1,0 +1,243 @@
+@yellow:#efde07;
+@dark-yellow:#d8c807;
+@light-gray:#efefef;
+@gray:#e2e2e2;
+@dark-gray:#a5a5a5;
+@white:#fff;
+
+.font(@weight)
+{
+    font-family: 'Lato', sans-serif;
+    font-weight:@weight;
+}
+.shadow
+{
+    -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .05);
+    -moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, .05);
+    box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, .05);
+}
+.radius(@radius)
+{
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.center
+{
+    right:0;
+    left:0;
+    margin:0 auto 0;
+}
+html, body
+{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    background-color:@light-gray;
+    font-size:20px;
+    position:relative;
+}
+#wrapper
+{
+    width:100%;
+    height:100%;
+    position:absolute;
+}
+#wrapper img
+{
+    width:20%;
+    min-width:200px;
+    max-width:300px;
+    display:block;
+    position:absolute;
+    top:10%;
+    .center;
+}
+p
+{
+    width:80%;
+    max-width:500px;
+    text-align:center;
+    color:@dark-gray;
+    top:55%;
+    position:absolute;
+    .center;
+    .font(300);
+}
+nav
+{
+    display:block;
+    position:absolute;
+    width:500px;
+    height:50px;
+    .center;
+    bottom:20%;
+}
+nav .btn
+{
+    position:absolute;
+    width:45%;
+    height:50px;
+    line-height:50px;
+    text-transform:uppercase;
+    float:left;
+    border:3px dashed @yellow;
+    background-color:@yellow;
+    text-align:center;
+    font-size:1em;
+    letter-spacing:1px;
+    color:#fff;
+    cursor:pointer;
+    /*.font(400);*/
+    .radius(2px);
+    
+    a {
+	    text-decoration: none;
+	    color:#fff;
+	  }
+}
+.gal{left:0;}
+.app{right:0;}
+.send {
+
+}
+nav .btn:hover
+{
+    background-color:transparent;
+    color:@yellow;
+    
+    a {
+	    text-decoration: none;
+	    color:@yellow;
+	  }
+}
+@media all and (max-width: 600px){
+    nav{height:120px;width:80%;min-width:80%;bottom:10%;}
+    nav .btn{width:100%;} 
+    .app{.center;top:0;}
+    .gal{.center;bottom:0;}
+
+}
+progress[value] {
+  /* Reset the default appearance */
+    -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+    border: none;
+    width: 300px;
+    height: 40px;
+    
+}
+progress[value]::-webkit-progress-bar {background-color:@gray;.radius(2px);}
+progress[value]::-webkit-progress-value {background-color:@yellow;.radius(2px);}
+progress[value]::-moz-progress-bar {background-color:@yellow;.radius(2px);}
+
+#center
+{
+    max-width:600px;
+    width:90%;
+    margin:0 auto 0;
+    border:1px solid red;
+}
+.video
+{
+    width:100%;
+}
+
+
+#wrapper {
+	
+	#container {
+		width: 650px;
+		height: 600px;
+		margin: 0 auto;
+	}
+	
+	#draw {
+		background-color: white;
+		width: 400px;
+		height: 400px;
+		right:0;
+    left:0;
+    top: 40px;
+		position: absolute;
+		.center;
+		display:block;
+    position:absolute;
+  	background-image: url('../img/bgGrid.svg');  
+  	background-position: center center;
+  	z-index: 100;
+  	.shadow;	
+	}
+	
+	#progress {
+		display:block;
+    position:absolute;
+    width:400px;
+    height:60px;
+		top: 450px;
+		background-color: @gray;
+		.center;
+		overflow: hidden;
+		
+
+		#filled {
+			width: 100%;
+			background: @yellow;
+			position:absolute;
+			height: 100%;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+			z-index: 10;
+		}
+		
+		#send {
+			width: 100%;
+			position:absolute;
+			height: 100%;
+			bottom: -100%;
+			left: 0;
+			text-align: center;
+			
+			#trash {
+				background-image: url('../img/trash-01.svg');
+				background-repeat: no-repeat;
+				background-position: center center;
+				width: 50%;
+				height: 100%;
+				float: left;
+			}
+			
+			#envelope {
+				background-image: url('../img/submitBG-01.svg');
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				width: 50%;
+				height: 100%;
+				float: left;
+			}
+			
+			#envelope.send {
+				transition: 0.5s ease-in-out;
+				background-position: 0 -60px;
+			}
+		}
+		
+		#send.active {
+			transition: 0.5s ease-in-out;
+			bottom: 0;
+		}
+	}
+	
+	#progress.active #filled {
+  	transition: 6s ease-in-out;
+		left: -100%;
+	}
+	
+	#progress.deactive #filled {
+  	transition: 1s ease-in-out;
+		left: 0;
+	}
+}
